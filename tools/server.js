@@ -82,7 +82,7 @@ function startDevServer() {
     res.sendStatus(404);
   });
 
-  app.listen(pkgJson.rekit.devPort, (err) => {
+  app.listen(process.env.PORT || 3000, (err) => {
     if (err) {
       console.log('my name is nir')
       console.error(err);
@@ -109,7 +109,7 @@ function startBuildServer() {
     res.sendStatus(404);
   });
 
-  app.listen(pkgJson.rekit.buildPort, (err) => {
+  app.listen(process.env.PORT || 3001, (err) => {
     if (err) {
       console.error(err);
     }
@@ -134,7 +134,7 @@ function startStudioServer() {
     res.sendStatus(404);
   });
 
-  const port = pkgJson.rekit.studioPort;
+  const port = process.env.PORT || 3002;
   server.listen(port, (err) => {
     if (err) {
       console.error(err);
