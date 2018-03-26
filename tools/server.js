@@ -194,6 +194,6 @@ function buildDevDll() {
   return Promise.resolve();
 }
 
-if (!args.mode || args.mode === 'build') startBuildServer();
+// if (!args.mode || args.mode === 'build') startBuildServer();
 if (!args.mode || args.mode === 'dev') buildDevDll().then(startDevServer);
-if (!args.mode || args.mode === 'studio') startStudioServer();
+// if (!args.mode || args.mode === 'studio') startStudioServer();
