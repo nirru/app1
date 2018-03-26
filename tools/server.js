@@ -43,6 +43,7 @@ const manifestPath = path.join(__dirname, '../.tmp/dev-vendors-manifest.json');
 
 // Start an express server for development using webpack dev-middleware and hot-middleware
 function startDevServer() {
+  console.log('1');
   const app = express();
   const devConfig = getConfig('dev');
 
@@ -96,6 +97,7 @@ function startDevServer() {
 
 // Start an express server for build result.
 function startBuildServer() {
+  console.log('2');
   const app = express();
   const root = path.join(__dirname, '../build');
   app.use(express.static(root));
