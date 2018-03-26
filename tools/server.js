@@ -81,12 +81,25 @@ function startDevServer() {
     res.sendStatus(404);
   });
 
-  app.listen(pkgJson.rekit.devPort, (err) => {
+  // app.listen(pkgJson.rekit.devPort, (err) => {
+  //   if (err) {
+  //     console.log()
+  //     console.error(err);
+  //   }
+  //   console.log(`Dev server listening at http://localhost:${pkgJson.rekit.devPort}/`);
+  //   if (API) {
+  //     console.log(`Proxy to API Server(Only for dev): ${API}`);
+  //   }
+  // });
+
+  app.listen(0, (err) => {
     if (err) {
+      console.log('my name is nirmal')
       console.error(err);
     }
-    console.log(`Dev server listening at http://localhost:${pkgJson.rekit.devPort}/`);
+    console.log(`Dev server listening at http://localhost:${app.address().port}/`);
     if (API) {
+      console.log('choose me');
       console.log(`Proxy to API Server(Only for dev): ${API}`);
     }
   });
