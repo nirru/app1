@@ -82,17 +82,20 @@ function startDevServer() {
     res.sendStatus(404);
   });
 
-  app.listen(process.env.PORT || 3000, (err) => {
-    if (err) {
-      console.log('my name is nir')
-      console.error(err);
-    }
-    console.log(`Dev server listening at http://localhost:${pkgJson.rekit.devPort}/`);
-    if (API) {
-      console.log(`Proxy to API Server(Only for dev): ${API}`);
-    }
+  // app.listen(process.env.PORT || 3000, (err) => {
+  //   if (err) {
+  //     console.log('my name is nir');
+  //     console.error(err);
+  //   }
+  //   console.log(`Dev server listening at http://localhost:${pkgJson.rekit.devPort}/`);
+  //   if (API) {
+  //     console.log(`Proxy to API Server(Only for dev): ${API}`);
+  //   }
+  // });
+  const port = process.env.PORT || 8000;
+  app.listen(port, () => {
+    console.log('App is running on port ' + port);
   });
-
 }
 
 // Start an express server for build result.
